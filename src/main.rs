@@ -11,15 +11,15 @@ fn main() -> Result<(), eframe::Error> {
     let options = eframe::NativeOptions {
         decorated: false,
         transparent: true,
-        min_window_size: Some(egui::vec2(250.0, 90.0)),
-        initial_window_size: Some(egui::vec2(250.0, 140.0)),
+        min_window_size: Some(egui::vec2(300.0, 300.0)),
+        initial_window_size: Some(egui::vec2(600.0, 600.0)),
         resizable: true,
-        follow_system_theme: true,
+        follow_system_theme: false,
         ..Default::default()
     };
     eframe::run_native(
         "Proxy Blocker",
-        options,
+        options.clone(),
         Box::new(|_cc| Box::new(default_window::MainWindow::default())),
     )
 }

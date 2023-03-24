@@ -1,4 +1,5 @@
 use crate::default_window::ProxyEvent;
+use eframe::egui;
 use hyper::service::{make_service_fn, service_fn};
 use hyper::upgrade::Upgraded;
 use hyper::{http, Body, Client, Method, Request, Response, Server};
@@ -43,7 +44,6 @@ pub async fn proxy_service(
     addr: SocketAddr,
     proxy_event_sender: mpsc::Sender<ProxyEvent>,
     status: Arc<Mutex<ProxyEvent>>,
-    // request_event_sender: mpsc::Sender<RequestEvent>,
 ) {
     let addr = addr;
 
